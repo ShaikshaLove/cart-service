@@ -14,9 +14,12 @@ import io.s3soft.cartservice.api.dto.OrderPlaced;
 import io.s3soft.cartservice.dto.CartItemDTO;
 import io.s3soft.cartservice.model.Cart;
 import io.s3soft.cartservice.service.ICartService;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMethod;
 @RestController
 @RequestMapping("/api/cart")
+@CrossOrigin(origins = "*", allowedHeaders = "*",methods = {RequestMethod.DELETE,
+		                 RequestMethod.GET,RequestMethod.PUT,RequestMethod.POST})
 public class CartRestController {
 
 	@Autowired
